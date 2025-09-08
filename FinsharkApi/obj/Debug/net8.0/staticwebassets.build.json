@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "YCcP4FVrwmBfUrr6P2ltX5Jf+GC9iryZSTDh9106JoQ=",
+  "Source": "FinsharkApi",
+  "BasePath": "_content/FinsharkApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
