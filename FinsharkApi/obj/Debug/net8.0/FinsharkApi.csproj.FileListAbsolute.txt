@@ -172,3 +172,4 @@ C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\
 C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\FinsharkApi.pdb
 C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\FinsharkApi.genruntimeconfig.cache
 C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\ref\FinsharkApi.dll
+C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\FinsharkApi.sourcelink.json
