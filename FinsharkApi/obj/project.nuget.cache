@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IpvodsEL5dU=",
+  "dgSpecHash": "AjBxe8vi11o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj",
+  "projectFilePath": "c:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oyede\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\oyede\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

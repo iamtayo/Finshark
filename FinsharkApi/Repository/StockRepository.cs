@@ -65,5 +65,10 @@ namespace FinsharkApi.Repository
             await _context.SaveChangesAsync();
             return stock;
         }
+
+        public Task<bool> StockExistsAsync(int id)
+        {
+            return _context.Stocks.AnyAsync(s => s.Id == id);
+        }
     }
 }

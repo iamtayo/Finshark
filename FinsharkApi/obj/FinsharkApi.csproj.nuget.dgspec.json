@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj": {}
+    "c:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj": {
+    "c:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj",
+        "projectUniqueName": "c:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj",
         "projectName": "FinsharkApi",
-        "projectPath": "C:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj",
+        "projectPath": "c:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\FinsharkApi.csproj",
         "packagesPath": "C:\\Users\\oyede\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\obj\\",
+        "outputPath": "c:\\Users\\oyede\\OneDrive\\Documents\\WEB DEV\\Finshark\\FinsharkApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

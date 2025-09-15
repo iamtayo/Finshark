@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FinsharkApi.DTOs.StockDTOs.CommentDTOs;
 using FinsharkApi.Interfaces;
 using FinsharkApi.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +15,11 @@ namespace FinsharkApi.Controllers
     public class CommentController : ControllerBase
     {
         private readonly ICommentRepository _comRepo;
-        public CommentController(ICommentRepository comRepo)
+        private readonly IStockRepository _stoRepo;
+        public CommentController(ICommentRepository comRepo, IStockRepository stoRepo)
         {
             _comRepo = comRepo;
+            _stoRepo = stoRepo;
         }
 
         [HttpGet("get-comments")]
@@ -39,5 +42,40 @@ namespace FinsharkApi.Controllers
             return Ok(comment.ToCommentDTO());
         }
 
+
+        [HttpPost("add-comment{stockId}")]
+        public async Task<IActionResult> AddComment([FromRoute] int stockId, CreateCommentDTO commentDTO)
+        {
+            if (!await _stoRepo.StockExistsAsync(stockId))
+            {
+                return BadRequest("Stock does not exist");
+            }
+
+            var commentModel = commentDTO.ToCommentCreate();
+            var createdComment = await _comRepo.CreateComment(commentModel);
+            return CreatedAtAction(nameof(GetCommentById), new { id = createdComment.Id }, createdComment.ToCommentDTO());
+        }
+
+        [HttpPut("update-comment/{id}")]
+        public async Task<IActionResult> UpdateComment([FromRoute] int id, UpdateCommentDTO commentDTO)
+        {
+            var comment = await _comRepo.UpdateComment(id, commentDTO.ToCommentUpdate());
+            if (comment == null)
+            {
+                return NotFound("Comment not found");
+            }
+            return Ok(comment.ToCommentDTO());
+        }
+
+        [HttpDelete("delete-comment/{id}")]
+        public async Task<IActionResult> DeleteComment([FromRoute] int id)
+        {
+            var comment = await _comRepo.DeleteComment(id);
+            if (comment == null)
+            {
+                return NotFound("Comment not found");
+            }
+            return Ok(comment.ToCommentDTO());
+        }
     }
 }

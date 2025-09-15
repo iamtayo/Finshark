@@ -14,6 +14,7 @@ namespace FinsharkApi.Interfaces
         Task<Stock> CreateStockAsync(Stock stock);
         Task<Stock?> UpdateStockAsync(int id, UpdateStockDTO stock);
         Task<Stock?> DeleteStockAsync(int id);
+        Task<bool> StockExistsAsync(int id);
 
     }
 }
