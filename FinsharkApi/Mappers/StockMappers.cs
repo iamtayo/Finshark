@@ -22,5 +22,17 @@ namespace FinsharkApi.Mappers
                 MarketCap = dto.MarketCap
             };
         }
+        public static CreateStockDTO ToStockDTO(this Stock stock)
+        {
+            return new CreateStockDTO
+            {
+        Symbol = stock.Symbol,
+        CompanyName = stock.CompanyName,
+        Price = stock.Price,
+        LastDiv = stock.LastDiv,
+        Industry = stock.Industry,
+        MarketCap = stock.MarketCap
+    };
+        }
     }
 }

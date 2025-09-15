@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinsharkApi.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20250905183310_init")]
-    partial class Init
+    [Migration("20250912155825_comment-controller")]
+    partial class Commentcontroller
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,8 +66,9 @@ namespace FinsharkApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Industry")
-                        .HasColumnType("int");
+                    b.Property<string>("Industry")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("LastDiv")
                         .HasColumnType("decimal(18,2)");

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinsharkApi.Data;
 using FinsharkApi.DTOs;
+using FinsharkApi.Interfaces;
 using FinsharkApi.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,26 +14,23 @@ namespace FinsharkApi.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly IStockRepository _stockRepo;
 
-        public StockController(ApplicationDBContext context)
+        public StockController( IStockRepository stockRepo)
         {
-            _context = context;
-
+            _stockRepo = stockRepo;
         }
         [HttpGet("get-stocks")]
-
-
-        public IActionResult GetStocks()
+        public async Task<IActionResult> GetStocks()
         {
-            var stocks = _context.Stocks.ToList();
+            var stocks = await _stockRepo.GetAllStocksAsync();
             return Ok(stocks);
         }
 
         [HttpGet("get-stock/{id}")]
-        public IActionResult GetStockById([FromRoute] int id)
+        public async Task<IActionResult> GetStockById([FromRoute] int id)
         {
-            var stock = _context.Stocks.Find(id);
+            var stock = await _stockRepo.GetStockByIdAsync(id);
             if (stock == null)
             {
                 return NotFound();
@@ -42,54 +40,37 @@ namespace FinsharkApi.Controllers
 
         [HttpPost]
         [Route("create-stock")]
-        public IActionResult Create([FromBody] CreateStockDTO dto)
+        public async Task<IActionResult> Create([FromBody] CreateStockDTO stockDto)
         {
-            var stock = dto.ToStockFromCreateDTO();
-            {
-                if (stock == null)
-                {
-                    return BadRequest();
-                }
-                _context.Stocks.Add(stock);
-                _context.SaveChanges();
-                return CreatedAtAction(nameof(GetStockById), new { id = stock.Id }, stock);
-            }
+            var stockModel = stockDto.ToStockFromCreateDTO();
+              await _stockRepo.CreateStockAsync(stockModel);
+                return CreatedAtAction(nameof(GetStockById), new { id = stockModel.Id }, stockModel);
+            
 
         }
 
         [HttpPut]
         [Route("update-stock/{id}")]
-        public IActionResult Update([FromRoute] int id, [FromBody] UpdateStockDTO dto)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateStockDTO dto)
         {
-            var stock = _context.Stocks.FirstOrDefault(s => s.Id == id);
+            var stock = await _stockRepo.UpdateStockAsync(id, dto);
             if (stock == null)
             {
                 return NotFound();
             }
-
-            stock.Symbol = dto.Symbol;
-            stock.CompanyName = dto.CompanyName;
-            stock.Price = dto.Price;
-            stock.LastDiv = dto.LastDiv;
-            stock.Industry = dto.Industry;
-            stock.MarketCap = dto.MarketCap;
-
-            _context.SaveChanges();
             return Ok(stock);
         }
 
         [HttpDelete]
         [Route("delete-stock/{id}")]
 
-        public IActionResult DeleteStock([FromRoute] int id)
+        public async Task<IActionResult> DeleteStock([FromRoute] int id)
         {
-            var stock = _context.Stocks.Find(id);
+            var stock = await _stockRepo.DeleteStockAsync(id);
             if (stock == null)
             {
                 return NotFound();
             }
-            _context.Stocks.Remove(stock);
-            _context.SaveChanges();
             return NoContent();
 
         }

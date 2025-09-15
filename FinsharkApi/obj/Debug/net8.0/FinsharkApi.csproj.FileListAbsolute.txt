@@ -173,3 +173,7 @@ C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\
 C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\FinsharkApi.genruntimeconfig.cache
 C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\ref\FinsharkApi.dll
 C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\obj\Debug\net8.0\FinsharkApi.sourcelink.json
+c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
