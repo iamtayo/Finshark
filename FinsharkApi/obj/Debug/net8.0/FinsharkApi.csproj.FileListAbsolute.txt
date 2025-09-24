@@ -177,3 +177,5 @@ c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\
 c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Newtonsoft.Json.dll
 c:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\oyede\OneDrive\Documents\WEB DEV\Finshark\FinsharkApi\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

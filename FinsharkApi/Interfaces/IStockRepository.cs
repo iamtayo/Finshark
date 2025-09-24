@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinsharkApi.DTOs;
+using FinsharkApi.Helpers;
 using FinsharkApi.Models;
 
 namespace FinsharkApi.Interfaces
 {
     public interface IStockRepository
     {
-        Task<List<Stock>> GetAllStocksAsync();
+        Task<List<Stock>> GetAllStocksAsync(QueryObject query );
         Task<Stock?> GetStockByIdAsync(int id);
         Task<Stock> CreateStockAsync(Stock stock);
         Task<Stock?> UpdateStockAsync(int id, UpdateStockDTO stock);
